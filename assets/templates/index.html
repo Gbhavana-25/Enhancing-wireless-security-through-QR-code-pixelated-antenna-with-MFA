@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{% load static %}
+
+{%block contents%}
+<div id="site_content">
+    <ul id="images">
+        <li><img src="{%static 'images/1.jpg'%}" width="600" height="300" alt="seascape_one"/></li>
+        <li><img src="{%static 'images/2.jpg'%}" width="600" height="300" alt="seascape_two"/></li>
+        <li><img src="{%static 'images/3.jpg'%}" width="600" height="300" alt="seascape_three"/></li>
+        <li><img src="{%static 'images/4.jpg'%}" width="600" height="300" alt="seascape_four"/></li>
+        <li><img src="{%static 'images/5.jpg'%}" width="600" height="300" alt="seascape_five"/></li>
+        <li><img src="{%static 'images/6.jpg'%}" width="600" height="300" alt="seascape_seascape"/></li>
+    </ul>
+
+    <div class="content">
+        <h1>Quick response (QR) codes</h1>
+        <p>Quick response (QR) codes can be used for antenna applications, in addition to being used as
+            information-sharing and security devices. QR-Code pixelated antennas present a game-changing solution for
+            wireless communication and security applications. Their ability to facilitate efficient data transfer,
+            compact form factor, compatibility with existing infrastructure, and enhanced security measures make them
+            highly desirable for a wide range of applications, ranging from consumer electronics to industrial systems.
+            The aim of this paper is to demonstrate the feasibility and success of QR code structures as antennas in
+            wireless communication applications. It is designed on a low-cost FR4 substrate board.</p>
+        <p>The suggested antenna configuration contains a modified coaxial-fed patch resonator with a QR pixelated
+            configuration and a full ground plane providing a broad bandwidth of 8 to 9.6 GHz. The critical
+            characteristics have been examined in simulations and sufficient return loss, radiation gain, levels are all
+            achievable with the planned compact QR antenna design.</p>
+    </div>
+</div>
+{%endblock%}

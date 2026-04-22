@@ -1,0 +1,66 @@
+{% extends 'users/userbase.html'%}
+{%load static%}
+{%block contents%}
+<div id="site_content">
+    <ul id="images">
+        <li><img src="{%static 'images/1.jpg'%}" width="600" height="300" alt="seascape_one"/></li>
+        <li><img src="{%static 'images/2.jpg'%}" width="600" height="300" alt="seascape_two"/></li>
+        <li><img src="{%static 'images/3.jpg'%}" width="600" height="300" alt="seascape_three"/></li>
+        <li><img src="{%static 'images/4.jpg'%}" width="600" height="300" alt="seascape_four"/></li>
+        <li><img src="{%static 'images/5.jpg'%}" width="600" height="300" alt="seascape_five"/></li>
+        <li><img src="{%static 'images/6.jpg'%}" width="600" height="300" alt="seascape_seascape"/></li>
+    </ul>
+
+    <div class="content">
+        <h1>Quick response (QR) codes</h1>
+
+        <p>
+            <center>
+
+                {%csrf_token%}
+
+
+        <h1>Results is <span style="color:RED">{{msg}}</span></h1>
+        <table>
+            <tr>
+                <td><img src="{%static 'qrcodes/wide_border_qrcode.png'%}" width="450" height="380"></td>
+                <td><img src="{%static 'qrcodes/darkblue_qrcode.png'%}" width="450" height="380"></td>
+            </tr>
+            <tr>
+                <td><img src="{%static 'qrcodes/lightblue_qrcode.png'%}" width="450" height="380"></td>
+                <td><img src="{%static 'qrcodes/green_datadark_qrcode.png'%}" width="450" height="380"></td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="{%static 'qrcodes/wifi.png'%}" width="450" height="380">
+                </td>
+            </tr>
+        </table>
+
+        <form action="{%url 'ShareToUsers'%}" method="post">
+            {%csrf_token%}
+            <table>
+    <tr>
+        <td>Select Users:</td>
+        <td>
+            <select name="recipientUser" required>
+                <option value="">---Select the Recipient User</option>
+                {% for i in usrs %}
+                <option value="{{i.loginid}}">{{i.loginid}}</option>
+                {% endfor %}
+            </select>
+        </td>
+    </tr>
+    <input type="hidden" value="{{msg}}"  name="qrName">
+    <tr>
+        <td></td>
+        <td><input type="submit" value="Share"></td>
+    </tr>
+</table>
+</form>
+
+
+    </div>
+</div>
+
+{%endblock%}

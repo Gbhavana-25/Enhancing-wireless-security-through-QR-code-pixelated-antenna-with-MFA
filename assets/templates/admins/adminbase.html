@@ -1,0 +1,57 @@
+{%load static%}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Enhancing Wireless Security Through QR Code Pixelated Antenna With MultiFactor Authentication</title>
+    <meta name="description" content="website description"/>
+    <meta name="keywords" content="website keywords, website keywords"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="{%static 'css/style.css'%}"/>
+    <!-- modernizr enables HTML5 elements and feature detects -->
+    <script type="text/javascript" src="{%static 'js/modernizr-1.5.min.js'%}"></script>
+</head>
+
+<body>
+<div id="main">
+    <header>
+        <div id="logo">
+            <div id="logo_text">
+                <!-- class="logo_colour", allows you to change the colour of the text -->
+                <h1><a href="{%url 'AdminHome'%}">QR-Code<span class="logo_colour"> Pixelated</span></a></h1>
+                <h2>Enhancing Wireless Security Through QR Code Pixelated Antenna With MultiFactor Authentication</h2>
+            </div>
+        </div>
+        <nav>
+            <ul class="sf-menu" id="nav">
+                <li class=""><a href="{% url 'AdminHome' %}">Home</a></li>
+                <li class=""><a href="{% url 'RegisterUsersView' %}">User Details</a></li>
+                <li class=""><a href="{% url 'index' %}">Logout</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    {%block contents%}
+    {%endblock%}
+   
+</div>
+<p>&nbsp;</p>
+<!-- javascript at the bottom for fast page loading -->
+<script type="text/javascript" src="{%static 'js/jquery.js'%}"></script>
+<script type="text/javascript" src="{%static 'js/jquery.easing-sooper.js'%}"></script>
+<script type="text/javascript" src="{%static 'js/jquery.sooperfish.js'%}"></script>
+<script type="text/javascript" src="{%static 'js/jquery.kwicks-1.5.1.js'%}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+      $('#images').kwicks({
+        max : 600,
+        spacing : 2
+      });
+      $('ul.sf-menu').sooperfish();
+    });
+
+
+
+</script>
+</body>
+</html>

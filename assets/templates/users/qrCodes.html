@@ -1,0 +1,44 @@
+{% extends 'users/userbase.html'%}
+{%load static%}
+{%block contents%}
+<div id="site_content">
+    <ul id="images">
+        <li><img src="{%static 'images/1.jpg'%}" width="600" height="300" alt="seascape_one"/></li>
+        <li><img src="{%static 'images/2.jpg'%}" width="600" height="300" alt="seascape_two"/></li>
+        <li><img src="{%static 'images/3.jpg'%}" width="600" height="300" alt="seascape_three"/></li>
+        <li><img src="{%static 'images/4.jpg'%}" width="600" height="300" alt="seascape_four"/></li>
+        <li><img src="{%static 'images/5.jpg'%}" width="600" height="300" alt="seascape_five"/></li>
+        <li><img src="{%static 'images/6.jpg'%}" width="600" height="300" alt="seascape_seascape"/></li>
+    </ul>
+
+    <div class="content">
+        <h1>Quick response (QR) codes</h1>
+        <h2>Test User Input</h2>
+        <p>
+            <center>
+        <form action="{%url 'GenerateQRCodes'%}" method="POST" align="center">
+            {%csrf_token%}
+            <table>
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <strong>Please Enter Text to Generate QR Code</strong>
+                        <textarea name="msg"
+                                  rows="5" cols="50"
+                                  required
+                                  placeholder="Please enter any text">
+                    </textarea><br/>
+                    </div>
+                </div>
+                <div class="form-group row">
+
+                </div>
+
+                <button class="btn  btn-primary text-white py-3 px-5" type="submit"> Generate</button>
+
+
+            </table>
+        </form>
+    </div>
+</div>
+
+{%endblock%}
